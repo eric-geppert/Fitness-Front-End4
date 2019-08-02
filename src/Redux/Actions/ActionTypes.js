@@ -1,0 +1,15 @@
+// types of action
+// const Types = {
+//     UPDATE_BUTTON: "UPDATE_BUTTON"
+//     // SELECT_GAIN: "SELECT_GAIN",
+//     // SELECT_LOSE: "SELECT_LOSE",
+//     // SELECT_MAINTAIN: "SELECT_MAINTAIN",
+//     //UPDATE_FILTER
+//   };
+export const UPDATE_SELECTED = 'UPDATE_SELECTED';
+export const TOGGLE_IS_AUTHENTICATED = 'TOGGLE_IS_AUTHENTICATED';
+// const FILTER_BY_GAIN="FILTER_BY_GAIN";
+// const FILTER_BY_LOSE="FILTER_BY_LOSE";
+// const FILTER_BY_MAINTAIN="FILTER_BY_MAINTAIN";
+// const FILTER_BY_NONE="FILTER_BY_NONE";
+//dont need export?? why?
