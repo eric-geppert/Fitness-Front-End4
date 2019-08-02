@@ -36,33 +36,10 @@ class Login extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    this.props.ToggleIsAuthenticated(true);
-
+    // this.props.ToggleIsAuthenticated(true);
+    console.log('inside new vv3');
     try {
-      fetch('https://localhost:8443/', {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        }
-      }).then(response => {
-        console.log('response: ' + response.status);
-        if (response.status === 200) {
-          console.log('get successful');
-          this.setState({ redirect: true });
-          this.props.toggleLoading();
-          alert('get gotten: ');
-        } else {
-          console.log('(login.js) error');
-          this.props.toggleLoading();
-          alert('error: ' + response.status);
-        }
-      });
-    } catch (e) {
-      alert(e.message);
-    }
-    try {
-      this.props.toggleLoading();
+      // this.props.toggleLoading();
       fetch('https://localhost:8443/r', {
         // credentials: 'include',
         method: 'POST',
@@ -78,8 +55,8 @@ class Login extends Component {
         console.log('response: ' + response.status);
         if (response.status === 200) {
           console.log('hardcode registered');
-          this.setState({ redirect: true });
-          this.props.toggleLoading();
+          // this.setState({ redirect: true });
+          // this.props.toggleLoading();
           alert('registered: ');
         } else {
           console.log('(login.js) error');
