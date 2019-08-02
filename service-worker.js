@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Fitness-Front-End4/precache-manifest.d5922957af17e0355c3c8c43b826b102.js"
+  "/Fitness-Front-End4/precache-manifest.4383aefe31e4bd156e18152c3ed4f3da.js"
 );
 
 workbox.clientsClaim();
