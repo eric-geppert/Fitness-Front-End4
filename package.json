@@ -2,7 +2,7 @@
   "name": "find-my-workoutplan",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://eric-geppert.github.io/Fitness-App-Frontend3/",
+  "homepage": "https://eric-geppert.github.io/Fitness-Front-End4/",
   "dependencies": {
     "@babel/runtime": "^7.5.4",
     "@material-ui/core": "^3.9.2",
