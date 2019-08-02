@@ -37,6 +37,59 @@ class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     this.props.ToggleIsAuthenticated(true);
+
+    try {
+      fetch('https://localhost:8443/', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        console.log('response: ' + response.status);
+        if (response.status === 200) {
+          console.log('get successful');
+          this.setState({ redirect: true });
+          this.props.toggleLoading();
+          alert('get gotten: ');
+        } else {
+          console.log('(login.js) error');
+          this.props.toggleLoading();
+          alert('error: ' + response.status);
+        }
+      });
+    } catch (e) {
+      alert(e.message);
+    }
+    try {
+      this.props.toggleLoading();
+      fetch('https://localhost:8443/r', {
+        // credentials: 'include',
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: this.state.email,
+          password: this.state.password
+        })
+      }).then(response => {
+        console.log('response: ' + response.status);
+        if (response.status === 200) {
+          console.log('hardcode registered');
+          this.setState({ redirect: true });
+          this.props.toggleLoading();
+          alert('registered: ');
+        } else {
+          console.log('(login.js) error');
+          this.props.toggleLoading();
+          alert('error: ' + response.status);
+        }
+      });
+    } catch (e) {
+      alert(e.message);
+    }
     // try {
     //   this.props.toggleLoading();
     //   fetch('40.113.216.49:8080/login', {

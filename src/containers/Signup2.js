@@ -41,9 +41,9 @@ export default class Signup2 extends Component {
     event.preventDefault();
 
     try {
-      this.props.toggleLoading();
-      fetch('https://test4domain.ml:8443/webdataservice/register/', {
-        // fetch('http://localhost:8080/register/', {
+      // this.props.toggleLoading();
+      // fetch('https://test4domain.ml:8443/webdataservice/register/', {
+      fetch('https://localhost:8443/register/', {
         // credentials: 'include',
         method: 'POST',
         headers: {
@@ -57,10 +57,10 @@ export default class Signup2 extends Component {
       }).then(response => {
         console.log('response: ' + response.status);
         if (response.status === 200) {
-          console.log('(login.js) registered');
+          console.log('registered with vals');
           this.setState({ redirect: true });
           this.props.toggleLoading();
-          alert('registered: ');
+          alert('registered with values ');
         } else {
           console.log('(login.js) error');
           this.props.toggleLoading();
