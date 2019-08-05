@@ -38,8 +38,38 @@ class Login extends Component {
     event.preventDefault();
     // this.props.ToggleIsAuthenticated(true);
     console.log('inside new vv3');
+
+    //----GET
+
+    try {
+      fetch('https://localhost:8443/r', {
+        // credentials: 'include',
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        console.log('response: ' + response.status);
+        if (response.status === 200) {
+          console.log('hardcode registered');
+          // this.setState({ redirect: true });
+          // this.props.toggleLoading();
+          alert('registered: ');
+        } else {
+          console.log('(login.js) error');
+          this.props.toggleLoading();
+          alert('error: ' + response.status);
+        }
+      });
+    } catch (e) {
+      alert(e.message);
+    }
+
+    //-- /r
     try {
       // this.props.toggleLoading();
+      // fetch('https://test4domain.ml:8443/webdataservice/r', {
       fetch('https://localhost:8443/r', {
         // credentials: 'include',
         method: 'POST',
