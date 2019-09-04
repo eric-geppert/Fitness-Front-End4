@@ -44,6 +44,7 @@ export default class Signup2 extends Component {
       // this.props.toggleLoading();
       // fetch('https://test4domain.ml:8443/webdataservice/register', {
       fetch('https://localhost:8443/register', {
+        // fetch('http://localhost:8080/register', {
         // credentials: 'include',
         method: 'POST',
         headers: {

@@ -37,13 +37,15 @@ class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     // this.props.ToggleIsAuthenticated(true);
-    console.log('inside new vv3');
+    console.log('inside new2 vv3 with credentials include');
 
     //----GET
 
     try {
-      fetch('https://localhost:8443/r', {
-        // credentials: 'include',
+      // fetch('https://test4domain.ml:8443/webdataservice/', {
+      fetch('https://test4domain.ml:8443/server-test/', {
+        // fetch('https://localhost:8443/', {
+        credentials: 'include',
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -52,7 +54,7 @@ class Login extends Component {
       }).then(response => {
         console.log('response: ' + response.status);
         if (response.status === 200) {
-          console.log('hardcode registered');
+          console.log('get success');
           // this.setState({ redirect: true });
           // this.props.toggleLoading();
           alert('registered: ');
@@ -70,8 +72,10 @@ class Login extends Component {
     try {
       // this.props.toggleLoading();
       // fetch('https://test4domain.ml:8443/webdataservice/r', {
-      fetch('https://localhost:8443/r', {
-        // credentials: 'include',
+      // fetch('https://localhost:8443/r', {
+      fetch('https://test4domain.ml:8443/server-test/r', {
+        // fetch('http://localhost:8080/r', {
+        credentials: 'include',
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -163,7 +167,7 @@ class Login extends Component {
           <Button
             block
             bsSize='large'
-            disabled={!this.validateForm()}
+            // disabled={!this.validateForm()}
             type='submit'
           >
             Login
@@ -178,9 +182,9 @@ class Login extends Component {
  * should be value not func????
  * need?????
  */
-Login.propTypes = {
-  isAuthenticated: propTypes.func.isRequired
-};
+// Login.propTypes = {
+//   isAuthenticated: propTypes.func.isRequired
+// };
 
 //1st param is any state you want to pass in, 2nd object
 //with any actions you want to use
