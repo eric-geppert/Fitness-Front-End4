@@ -43,7 +43,7 @@ class Login extends Component {
 
     try {
       // fetch('https://test4domain.ml:8443/webdataservice/', {
-      fetch('https://test4domain.ml:8443/server-test/', {
+      fetch('https://test4domain.ml:8443/servertest/', {
         // fetch('https://localhost:8443/', {
         credentials: 'include',
         method: 'GET',
@@ -68,12 +68,39 @@ class Login extends Component {
       alert(e.message);
     }
 
+    try {
+      // fetch('https://test4domain.ml:8443/webdataservice/', {
+      fetch('https://test4domain.ml:8443/servertest/', {
+        // fetch('https://localhost:8443/', {
+        // credentials: 'include',
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        console.log('response: ' + response.status);
+        if (response.status === 200) {
+          console.log('get success withough credentials include');
+          // this.setState({ redirect: true });
+          // this.props.toggleLoading();
+          alert('registered: ');
+        } else {
+          console.log('(login.js) error on non credentials include');
+          this.props.toggleLoading();
+          alert('error: ' + response.status);
+        }
+      });
+    } catch (e) {
+      alert(e.message);
+    }
+
     //-- /r
     try {
       // this.props.toggleLoading();
       // fetch('https://test4domain.ml:8443/webdataservice/r', {
       // fetch('https://localhost:8443/r', {
-      fetch('https://test4domain.ml:8443/server-test/r', {
+      fetch('https://test4domain.ml:8443/servertest/r', {
         // fetch('http://localhost:8080/r', {
         credentials: 'include',
         method: 'POST',
