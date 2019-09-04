@@ -42,8 +42,8 @@ class Login extends Component {
     //----GET
 
     try {
-      // fetch('https://test4domain.ml:8443/webdataservice/', {
-      fetch('https://test4domain.ml:8443/servertest/', {
+      fetch('https://test4domain.ml:8443/webdataservice/', {
+        // fetch('https://test4domain.ml:8443/servertest/', {
         // fetch('https://localhost:8443/', {
         credentials: 'include',
         method: 'GET',
@@ -69,8 +69,8 @@ class Login extends Component {
     }
 
     try {
-      // fetch('https://test4domain.ml:8443/webdataservice/', {
-      fetch('https://test4domain.ml:8443/servertest/', {
+      fetch('https://test4domain.ml:8443/webdataservice/', {
+        // fetch('https://test4domain.ml:8443/servertest/', {
         // fetch('https://localhost:8443/', {
         // credentials: 'include',
         method: 'GET',
@@ -98,9 +98,9 @@ class Login extends Component {
     //-- /r
     try {
       // this.props.toggleLoading();
-      // fetch('https://test4domain.ml:8443/webdataservice/r', {
-      // fetch('https://localhost:8443/r', {
-      fetch('https://test4domain.ml:8443/servertest/r', {
+      fetch('https://test4domain.ml:8443/webdataservice/r', {
+        // fetch('https://localhost:8443/r', {
+        // fetch('https://test4domain.ml:8443/servertest/r', {
         // fetch('http://localhost:8080/r', {
         credentials: 'include',
         method: 'POST',
